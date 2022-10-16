@@ -1,0 +1,127 @@
+{% extends 'needs/ieltshomefaculty.html' %}
+{% load static %}
+{% block title %}
+PROJECT | Student
+{% endblock %}
+
+{% block addcss %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/Profile/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profilearea">
+    <div class="addmanyform">
+        <div class="profileinfo">
+            <div class="box promaindetain col-12 col-md-12 col-sm-12">
+                {{ object.last_name }}
+                {{ object.first_name }}
+            </div>
+            <div class="prohead">
+                Total Checks :-
+                {{ total_checks }}
+            </div>
+        </div>
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Total Active Student</td>
+                            <td> {{ total_active }}</td>
+                        </tr>
+                        <tr>
+                            <td>Total inactive Student</td>
+                            <td>{{ total_inactive }}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Student</td>
+                            <td>{{ total_student }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>All Task 1 Average(A)</td>
+                            <td> {{ all_taskone_acad_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>All Task 1 Average(G)</td>
+                            <td>{{ all_taskone_gen_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>All Task 2 Average</td>
+                            <td>{{ all_tasktwo_average }}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Act. Task 1 Average(A)</td>
+                            <td>{{ act_taskone_acad_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>Act. Task 1 Average(G)</td>
+                            <td>{{ act_taskone_gen_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>Act. Task 2 Average</td>
+                            <td> {{ act_tasktwo_average }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Inact. Task 1 Average(A)</td>
+                            <td>{{ inact_taskone_acad_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>Inact. Task 1 Average(G)</td>
+                            <td>{{ inact_taskone_gen_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>Inact. Task 2 Average</td>
+                            <td>{{ inact_tasktwo_average }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Task 1 Checks(A)</td>
+                            <td>{{ taskone_acad_checks }}</td>
+                        </tr>
+                        <tr>
+                            <td>Task 1 Checks(G)</td>
+                            <td>{{ taskone_gen_checks }}</td>
+                        </tr>
+                        <tr>
+                            <td>Task 2 Checks</td>
+                            <td>{{ tasktwo_checks }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        body {
+            font-size: 13px;
+        }
+
+        table {
+            border: 1px solid #3a6ca1;
+            padding: 3px 0;
+            margin: 3px;
+        }
+
+        table td,
+        table th,
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Faculty Details</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">Faculty Id</th>
+                    <th>Faculty Name</th>
+                    <th>Active Student</th>
+                    <th>Inactive Student</th>
+                    <th>Total Students</th>
+                    <th>Task 1(A) Checked</th>
+                    <th>Task 1(G) Checked</th>
+                    <th>Task 2 Checked</th>
+                    <th>Total Task Checked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for faculty in faculty_list %}
+                <tr>
+                    <td>{{ faculty.uid }}</td>
+                    <td>{{ faculty.name }}</td>
+                    <td>{{ faculty.active_student }}</td>
+                    <td>{{ faculty.inactive_student }}</td>
+                    <td>{{ faculty.total_students }}</td>
+                    <td>{{ faculty.taskone_A_count }}</td>
+                    <td>{{ faculty.taskone_G_count }}</td>
+                    <td>{{ faculty.tasktwo_count }}</td>
+                    <td>{{ faculty.total_checked }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

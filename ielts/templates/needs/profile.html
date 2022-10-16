@@ -1,0 +1,35 @@
+{% extends 'needs/ieltshomefaculty.html' %}
+{% load static %}
+{% block title %}
+PROJECT | Student
+{% endblock %}
+
+{% block addcss %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/Profile/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="addmanyform">
+    <div class="profileinfo">
+        <div class="baseofpro">
+            <div class="proimg" style="background-image: url({{ object.user_info_set.all.0.photo.url }});"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="formlabel col-12 col-md-6 col-lg-3 col-sm-12">
+        First name
+    </div>
+    <div class="formlabel col-12 col-md-6 col-lg-3 col-sm-12">
+        hemil
+    </div>
+    <div class="formlabel col-12 col-md-6 col-lg-3 col-sm-12">
+        First name
+    </div>
+    <div class="formlabel col-12 col-md-6 col-lg-3 col-sm-12">
+        shyani
+    </div>
+</div>
+
+{% endblock %}

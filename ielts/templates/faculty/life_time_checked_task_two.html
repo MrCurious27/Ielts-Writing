@@ -1,0 +1,149 @@
+{% extends 'needs/ieltshomefaculty.html' %}
+{% block title %}
+PROJECT | Student
+{% endblock %}
+{% block content %}
+
+<div class="topofpage">
+    <div class="grid-container">
+        <div class="pagehead">
+            My All Task Two
+        </div>
+    </div>
+</div>
+
+<div class="tlarge">
+    <div class="table_area col-12 col-md-12 col-sm-12 col-lg-12">
+        {% if object_list %}
+        <table class="table_body table-hover">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Student</th>
+                    <th>Question</th>
+                    <th>Time Submitted</th>
+                    <th>Time checked</th>
+                    <th>Overall Band</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <th>{{ answer.student_key.user_key.get_full_name }}</th>
+                    <td class="quesec">{{ answer.question }}</td>
+                    <td>{{ answer.timestamp }}</td>
+                    <td>{{ answer.checked_time }}</td>
+                    <th>{{ answer.overall_band }}</th>
+                    <td class="pointeronly" data-toggle="modal" data-target="#viewhistory{{ forloop.counter }}">View</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+        No Task to check for you hardworker
+        {% endif %}
+    </div>
+</div>
+
+{% if object_list %}
+{% for answer in object_list %}
+<div class="smtable_area col-12 col-md-12 col-sm-12 col-lg-12">
+    <table class="table_body table-hover">
+        <tbody>
+            <tr>
+                <td colspan="2">{{ answer.question }}</td>
+            </tr>
+            <tr>
+                <td>Student</td>
+                <td>{{ answer.student_key.user_key.get_full_name }}</td>
+            </tr>
+
+            <tr>
+                <td>Time Submitted</td>
+                <td>{{ answer.timestamp }}</td>
+            </tr>
+            <tr>
+                <td>Time checked</td>
+                <td>{{ answer.checked_time }}</td>
+            </tr>
+            <tr>
+                <td>Overall Bnad</td>
+                <td>{{ answer.overall_band }}</td>
+            </tr>
+            <tr>
+                <td>Action</td>
+                <td class="pointeronly" data-toggle="modal" data-target="#viewhistory{{ forloop.counter }}">View</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+<div class="pagesno">
+
+    {% if page_obj.has_previous %}
+    <div class="first">
+        <a href="?page=1"> First</a>
+
+    </div>
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+    {% endif %}
+
+    <span class="current">
+        &nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;
+    </span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+
+    <div class="last">
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    </div>
+    {% endif %}
+
+</div>
+{% else %}
+No Task to check for you hardworker
+{% endif %}
+
+{% for answer in object_list %}
+<div class="modal fade" data-backdrop="" id="viewhistory{{ forloop.counter }}" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Overall band: {{ answer.overall_band }}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class=" modal-body">
+                <b>Question:</b><br>
+                {{ answer.question }}
+                <hr>
+                <b>Answer:</b><br>
+                {{ answer.answer|safe }}
+                <hr>
+                Task Achievement: {{ answer.task_achievement }} <br>
+                {{ answer.task_achievement_remark }}
+                <hr>
+                Coherence and Cohension: {{ answer.coherence_and_cohension }} <br>
+                {{ answer.task_achievement_remark }}
+                <hr>
+                Lexical Resource: {{ answer.lexical_resource }} <br>
+                {{ answer.lexical_resource_remark }}
+                <hr>
+                Grammatical Range and Accuracy: {{ answer.grammer_range_accuracy }} <br>
+                {{ answer.grammer_range_accuracy_remark }}
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn1 btn-default1" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

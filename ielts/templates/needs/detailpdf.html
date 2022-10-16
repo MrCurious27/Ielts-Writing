@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body{
+        font-size: 13px;
+    }
+        table{
+            border:1px solid #3a6ca1;
+            padding: 3px 0;
+            margin: 3px ;
+        }
+
+        table td,table th,h3{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>{{ name }}</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">Sr No</th>
+                    <th>Student Name</th>
+                    <th>Time submited</th>
+                    <th>Faculty Name</th>
+                    <th>Time checked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ans in answer %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ ans.student_key.user_key.get_full_name }}</td>
+                    <td>{{ ans.timestamp }}</td>
+                    <td>{{ ans.student_key.faculty_key.user_key.get_full_name }}</td>
+                    <td>{{ ans.checked_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

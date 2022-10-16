@@ -1,0 +1,178 @@
+{% extends 'needs/ieltshomestudent.html' %}
+{% load static %}
+{% block title %}
+PROJECT | Student
+{% endblock %}
+
+{% block addcss %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/Profile/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="profilearea">
+
+    <div class="addmanyform">
+        <div class="profileinfo">
+
+            <div class="box promaindetain col-12 col-md-12 col-sm-12">
+                {{ object.last_name }}
+                {{ object.first_name }}
+            </div>
+            <div class="prohead">
+                Total Tasks Given :-
+                {{ total_checks }}
+            </div>
+        </div>
+
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Task 1(A)</td>
+                            <td> {{ taskone_acad_checks }}</td>
+                        </tr>
+                        <tr>
+                            <td>Task 1(G)</td>
+                            <td>{{ taskone_gen_checks }}</td>
+                        </tr>
+                        <tr>
+                            <td>Task 2 </td>
+                            <td> {{ tasktwo_checks }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box col-12 col-md-6 col-sm-12">
+            <div class="table_area profiledetail">
+                <table class="table_body table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Task 1 Average(A)</td>
+                            <td> {{ taskone_acad_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>Task 1 Average(G)</td>
+                            <td> {{ taskone_gen_average }}</td>
+                        </tr>
+                        <tr>
+                            <td>Task 2 Average</td>
+                            <td>{{ tasktwo_average }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <canvas id="myChartT1A{{ forloop.counter }}"></canvas><br><br>
+    <canvas id="myChartT1G{{ forloop.counter }}"></canvas><br><br>
+    <canvas id="myChartT2{{ forloop.counter }}"></canvas>
+</div>
+
+<script>
+var ctxT1A = document.getElementById('myChartT1A{{ forloop.counter }}').getContext('2d');
+var ctxT1G = document.getElementById('myChartT1G{{ forloop.counter }}').getContext('2d');
+var ctxT2 = document.getElementById('myChartT2{{ forloop.counter }}').getContext('2d');
+
+
+labelsT1A = [{% for datas in object.student.answertaskoneacademic_set.all %} "{{ datas.timestamp|date:"j/n/y (G:i)" }}", {% endfor %}]
+dataT1A = [{% for datas in object.student.answertaskoneacademic_set.all %} "{{ datas.overall_band }}", {% endfor %}]
+
+labelsT1G = [{% for datas in object.student.answertaskonegeneral_set.all %} "{{ datas.timestamp|date:"j/n/y (G:i)" }}", {% endfor %}]
+dataT1G = [{% for datas in object.student.answertaskonegeneral_set.all %} "{{ datas.overall_band }}", {% endfor %}]
+
+labelsT2 = [{% for datas in object.student.answertasktwo_set.all %} "{{ datas.timestamp|date:"j/n/y (G:i)" }}", {% endfor %}]
+dataT2 = [{% for datas in object.student.answertasktwo_set.all %} "{{ datas.overall_band }}", {% endfor %}]
+
+
+var myChartT1A = new Chart(ctxT1A, {
+    type: 'line',
+    data: {
+        labels: labelsT1A,
+        datasets: [{
+            label: 'Task One Academic Band Line Graph',
+            data: dataT1A,
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(75, 192, 192, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 9,
+                }
+            }]
+        }
+    }
+});
+
+var myChartT1G = new Chart(ctxT1G, {
+    type: 'line',
+    data: {
+        labels: labelsT1G,
+        datasets: [{
+            label: 'Task One General Band Line Graph',
+            data: dataT1G,
+            backgroundColor: [
+                'rgba(153, 102, 255, 0.2)',
+            ],
+            borderColor: [
+                'rgba(153, 102, 255, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 9,
+                }
+            }]
+        }
+    }
+});
+
+var myChartT2 = new Chart(ctxT2, {
+    type: 'line',
+    data: {
+        labels: labelsT2,
+        datasets: [{
+            label: 'Task Two Band Line Graph',
+            data: dataT2,
+            backgroundColor: [
+                'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 9,
+                }
+            }],
+        }
+    }
+});
+</script>
+
+
+{% endblock %}

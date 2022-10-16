@@ -1,0 +1,849 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f2;
+}
+
+a {
+    text-decoration: none;
+    color: #3a6ca1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.frontimg {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.cool::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+}
+
+.cool:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.coolline::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+.oversection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mainsection {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    bottom: 0px;
+    left: 270px;
+    z-index: 99;
+}
+
+/* ========================menu in phone=========================*/
+.menubut {
+    color: #3a6ca1;
+    cursor: pointer;
+    font-size: 30px;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.alertbox {
+    font-size: 20px;
+    background: #d3d3d3;
+    padding: 5px 30px;
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    right: 0;
+}
+
+.alertbox button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.alertbox button:focus {
+    outline: none;
+}
+
+.smtop-nav {
+    background-color: #0f4c75;
+    width: 270px;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 9999;
+    overflow: auto;
+}
+
+.smtop-nav ul {
+    list-style: none;
+    color: #000;
+    overflow: hidden;
+}
+
+.smtop-nav ul li {
+    margin: 10px 20;
+    padding: 10px 20px;
+}
+
+.smtop-nav ul li a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 20px;
+}
+
+.smtop-nav ul li .headofsubmenu {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 20px;
+}
+
+.smprofile {
+    text-align: center;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 20px;
+    border-bottom: 5px solid white;
+    overflow: hidden;
+    height: 150px;
+}
+
+.smtop-nav li ul {
+    display: none;
+}
+
+.smtop-nav .far {
+    font-size: 50px;
+    color: white;
+    margin: 30px auto;
+}
+
+.closebut {
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    overflow: hidden;
+    display: none;
+}
+
+.smtop-nav .fas {
+    float: right;
+    padding: 15px 25px;
+}
+
+.ieltsbody {
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.topofpage {
+    padding: 0 15px;
+}
+
+.topofpage .grid-container {
+    display: grid;
+    grid-template-columns: max-content 1fr 20%;
+    grid-template-areas: 'mypagehead mysbox myaddmany';
+    grid-gap: 20px;
+}
+
+.sbar .grid-container {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: 'mypagehead mysbox';
+    grid-gap: 20px;
+}
+
+.pagehead {
+    grid-area: mypagehead;
+    color: #3a6ca1;
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.sbox {
+    grid-area: mysbox;
+}
+
+.sbox {
+    padding: 7px 0;
+    float: left;
+    position: relative;
+}
+
+.searcharea {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+    border: 1px solid #3a6ca1;
+}
+
+.searcharea input {
+    outline: none;
+    width: calc(100% - 38px);
+    border: none;
+    float: left;
+    padding: 7px;
+    height: 38px;
+}
+
+.searchicon {
+    overflow: hidden;
+    color: #3a6ca1;
+    float: left;
+    font-size: 30px;
+    padding: 4px;
+    background-color: #fff;
+    height: 38px;
+    width: 38px;
+}
+
+.addmany {
+    grid-area: myaddmany;
+    color: #fff;
+    background-color: #3a6ca1;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    margin: 7px 0;
+}
+
+.table_body {
+    margin: 15px 0;
+    width: 100%;
+    color: black;
+    border-bottom: 1px solid #8079ba;
+    text-align: center;
+}
+
+.table_body td, .table_body th {
+    padding: 15px 5px;
+    border-top: 1px solid #8079ba;
+    text-align: center;
+    color: #3a6ca1;
+}
+
+.blocksection {
+    overflow: hidden;
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.blocksection:hover {
+    box-shadow: 0px 0px 7px #3a6ca1;
+}
+
+.addmanyform input,
+.addmanyform select {
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #3a6ca1;
+    margin: 12px 0;
+}
+
+.addmanyform .formlabel {
+    float: left;
+    margin: 10px 0;
+    font-size: 21px;
+    text-align: center;
+}
+
+.homesy {
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+
+.writinghead {
+    position: relative;
+    text-align: center;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.timer {
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+.writingbystd {
+    padding: 10px;
+}
+
+.writingbystd .grid-container {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2%;
+}
+
+.w2que, .w2ans, .w2queother {
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #3a6ca1;
+    overflow: auto;
+}
+
+.w2que img {
+    width: 100%;
+}
+
+.w2que textarea, .w2queother textarea {
+    width: 97%;
+    height: 100px;
+    padding: 10px;
+    outline: none;
+    resize: none;
+    cursor: default;
+    border: none;
+    padding: 10px;
+}
+
+.w2queother textarea {
+    height: 200px;
+}
+
+.w2ans textarea {
+    width: 97%;
+    height: 580px;
+    padding: 10px;
+    border: none;
+}
+
+.w2ans textarea:focus {
+    outline: none;
+}
+
+.quesec {
+    width: 50%;
+}
+
+.w1quecheck {
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.w1quecheck textarea,
+.w2quecheck textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    border: none;
+    resize: none;
+    cursor: default;
+}
+
+.w1quecheck textarea:focus, .w2quecheck textarea:focus {
+    outline: none;
+}
+
+.imgcheck img {
+    width: 75%;
+}
+
+.resultblock textarea {
+    width: 100%;
+    height: 70px;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    cursor: default;
+    padding: 5px;
+}
+
+.colorsection .red {
+    background-color: #f7686f;
+}
+
+.colorsection .green {
+    background-color: #25c488;
+}
+
+.colorsection .remove {
+    background-color: #fff;
+}
+
+.colorsection {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.colorsection .red,
+.colorsection .green,
+.colorsection .remove {
+    border: none;
+    text-align: center;
+    padding: 5px 0;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.addselecthover:hover {
+    transform: translatey(-5px);
+}
+
+/* ============   < addselect > class add and remove karavano ========== */
+.addselect {
+    box-shadow: 2px 2px 5px #3a6ca1;
+}
+
+.ansforcheck {
+    width: 100%;
+    box-shadow: 0 0 5px #3a6ca1;
+    padding: 7px;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.overallb label {
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+.pagesno {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.containerarea {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    background-color: #ecf0f2;
+    margin-top: 100px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 5px #3a6ca1;
+    width: 750px;
+    height: 250px;
+    padding: 70px 30px;
+    align-items: center;
+}
+
+.containerarea form {
+    width: 400px;
+}
+
+.login-area {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.login-area h2 {
+    margin: 15px 0;
+    color: #3a6ca1;
+    text-transform: uppercase;
+    font-size: 2.9rem;
+}
+
+.login-area .inputarea {
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.login-area .inputarea.one {
+    margin-top: 0;
+}
+
+.i {
+    color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i i {
+    transition: .3s;
+}
+
+.inputarea>div {
+    position: relative;
+    height: 45px;
+}
+
+.inputarea>div>h5 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.inputarea:before,
+.inputarea:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #3a6ca1;
+    transition: .4s;
+}
+
+.inputarea:before {
+    right: 50%;
+}
+
+.inputarea:after {
+    left: 50%;
+}
+
+.inputarea.focus:before,
+.inputarea.focus:after {
+    width: 50%;
+}
+
+.inputarea.focus>div>h5 {
+    top: -12px;
+    font-size: 15px;
+}
+
+.inputarea.focus>.i>i {
+    color: #3a6ca1;
+}
+
+.inputarea>div>input {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #555;
+    font-family: 'poppins', sans-serif;
+}
+
+.inputarea.pass {
+    margin-bottom: 4px;
+}
+
+.containerarea a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    transition: .3s;
+}
+
+.containerarea a:hover {
+    color: #3a6ca1;
+}
+
+.loginbtn {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #3a6ca1, #3a6ca1, #3a6ca1);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: .5s;
+}
+
+/* =====================profile===================== */
+.profilearea {
+    overflow: hidden;
+}
+
+.profilearea .profileinfo {
+    background-color: #3a6ca1;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.profilearea .proimg {
+    border: 10px solid #fff;
+}
+
+.profilearea .promaindetain {
+    color: #fff;
+    font-size: 4vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+.profilearea .prohead {
+    color: #fff;
+    font-size: 2vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+.profiledetail {
+    background: #fff;
+    color: #3a6ca1;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #3a6ca1;
+}
+
+.profilearea .table_body td,
+.profilearea .table_body {
+    border: none;
+}
+
+.profilearea .table_body td {
+    max-width: 30px;
+}
+
+.tlarge input[type="submit"] {
+    background: transparent;
+    border: none;
+    color: #3a6ca1;
+}
+
+.tlarge input[type="submit"]:focus {
+    outline: none;
+}
+
+.table_head {
+    font-size: 25px;
+    font-weight: 700;
+    color: #3a6ca1;
+    padding: 10px;
+}
+
+.smtable_area {
+    float: left;
+    border-radius: 5px;
+    background: #fff;
+    color: #3a6ca1;
+    font-size: 25px;
+    margin: 15px 0;
+    padding: 0 15px;
+    display: none;
+}
+
+.recordarea {
+    margin: 15px 0;
+}
+
+.emailresize {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20px;
+}
+
+.errorshow {
+    padding: 0px 20px;
+    color: #3a6ca1;
+    font-weight: 600;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css") .searchicon {
+    position: relative;
+}
+
+.searchicon input {
+    display: none;
+}
+
+.searchicon input+label {
+    display: inline-block;
+}
+
+.searchicon input+label:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f002";
+    position: absolute;
+    top: -3px;
+    right: 3px;
+    bottom: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+/*==========================Media Query==================*/
+@media screen and (max-width: 1424px) {}
+
+@media screen and (max-width: 1072px) {
+    .topofpage .grid-container {
+        grid-template-columns: 1fr max-content;
+        grid-template-areas: 'mypagehead mypagehead mypagehead''mysbox mysbox myaddmany';
+    }
+
+    .profilearea .promaindetain {
+        font-size: 5vw;
+    }
+
+    .profilearea .prohead {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .containerarea {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ieltsbody {
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    .closebut {
+        display: block;
+    }
+
+    .menubut {
+        display: block;
+    }
+
+    .mainsection {
+        left: 0;
+        top: 50px;
+    }
+
+    .pagehead {
+        text-align: center;
+    }
+
+    .writingbystd .grid-container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .writingbystd .grid-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 0%;
+    }
+
+    .w2que, .w2ans {
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .w2que textarea {
+        height: 120px;
+    }
+
+    .tlarge .table_area {
+        display: none;
+    }
+
+    .smtable_area {
+        display: block;
+    }
+
+    .profilearea .promaindetain {
+        font-size: 8vw;
+    }
+
+    .profilearea .prohead {
+        font-size: 4vw;
+    }
+
+    .alertbox {
+        position: absolute;
+        top: -50px;
+        left: 55px;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .topofpage {
+        padding: 0px;
+    }
+
+    .topofpage>.grid-container {
+        grid-template-columns: 100%;
+        grid-template-areas: 'mypagehead''sbox''myaddmany';
+        grid-gap: 0px;
+    }
+
+    .topofpage .pagehead {
+        grid-column: 1 / 4;
+    }
+
+    .topofpage .sbox {
+        grid-column: 1 / 2;
+    }
+
+    .topofpage .addmany {
+        grid-column: 1 / 4;
+    }
+
+    .containerarea form {
+        width: 100%;
+    }
+
+    .login-area {
+        width: 100%
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .w2que textarea {
+        height: 180px;
+    }
+
+    .profilearea .promaindetain {
+        font-size: 10vw;
+    }
+
+    .profilearea .prohead {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 380px) {}

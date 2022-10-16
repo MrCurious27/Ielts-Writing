@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>{% block title %} Knowledge Santa IELTS{% endblock %}</title>
+
+    {% block addcss %}{% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/IELTS/stylesheetielts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_mini.css' %}">
+
+    <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="oversection">
+        <div class="menubut">
+            <span id="ham" onclick="hamburger()">&#9776;</span>
+        </div>
+
+        <div class="smtop-nav">
+            <div class="closebut"><i onclick="cross()" id="cross" class="fas fa-times"></i></div>
+            <div class="smprofile">
+                <i class="far fa-user-circle"></i><br>
+                Class:- {{ request.user }}
+            </div>
+            <ul>
+                <li>
+                    <a href="{% url 'ielts:coaching_home' request.user %}" class="cool"></i>Faculty Detail</a>
+                </li>
+                <li>
+                    <a href="{% url 'ielts:all_student' request.user %}" class="cool"></i>Student Detail</a>
+                </li>
+                <li>
+                    <a href="{% url 'ielts:coachingprofile' request.user %}" class="cool"></i>Account</a>
+                </li>
+                <li>
+                    <a href="{% url 'ielts:change_password' request.user %}" class="cool"></i>Change Password</a>
+                </li>
+                <li>
+                    <a href="javascript:{document.getElementById('logout').submit()}" class="cool">Logout</a>
+                    <form id="logout" method="POST" action="{% url 'ielts:logout' %}">
+                        {% csrf_token %}
+                        <input type="hidden">
+                    </form>
+                </li>
+
+
+            </ul>
+        </div>
+
+        <div class="mainsection ieltsbody">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function hamburger() {
+            var x = document.getElementsByClassName("smtop-nav");
+            x[0].style.width = "270px";
+        }
+
+        function cross() {
+            var x = document.getElementsByClassName("smtop-nav");
+            x[0].style.width = "0px";
+        }
+
+        function chengeMenu() {
+            document.getElementById("dropMenu").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

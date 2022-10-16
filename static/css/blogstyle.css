@@ -1,0 +1,211 @@
+.blogmainbody{
+    border-radius: 5px;
+   	display: inline-block;
+    position: relative;
+    width: 100%
+}
+.blogconbody{
+	float: left;
+	background-color: #f7f6f9;
+	color: #3a6ca1;
+	border-radius: 5px;
+	width: 75%;
+}
+.blogconbody .heading{
+	font-size: 25px;
+	font-weight: 700;
+	padding:15px 15px 15px 30px;
+	text-align: center;
+}
+.mainimg img{
+	width: 100%;
+}
+
+.blogconbody .mainimg{
+	width: 80%;
+	margin: 10px auto;
+
+}
+.blogconbody .contentofblog{
+	text-align: justify;
+	margin: 35px 10px 20px 10px;
+}
+.contentofblog h5{        
+	margin: 20px  0;
+}
+.table_area_blog{
+    float: left;
+    border-radius: 5px;
+    color: #3a6ca1;
+    font-size: 25px;
+    margin: 10px 0;
+    padding: 0 15px;
+}
+.table_body_blog td,.table_body_blog th{
+	width: 100px;
+	color: #3a6ca1;
+	width: 160px;
+    padding: 5px;
+}
+.table_body_blog th{
+	border-top: 1px solid #3a6ca1;
+}
+.blogrightside{
+	float: left;
+	background-color: transparent;
+	color: #3a6ca1;
+	border-radius: 5px;
+	width: 25%;
+	
+}
+.blogrightside a{
+	color: #3a6ca1;
+}
+.sidehead{
+	background-color: #f7f6f9;
+	font-size: 25px;
+	font-weight: 600;
+	padding: 10px 0;
+	border-bottom: 1px solid #3a6ca1
+}
+.sidecon{
+	background-color: #f7f6f9;
+	font-size: 25px;
+	padding: 10px 0;
+}
+/*===============blog home==================*/
+.blogbox{
+	 float: left;   
+    text-align: center;
+    margin: 15px 0;
+}
+.bloglist:hover{
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	border-radius: 0px;
+}
+.blogmainbody .bloglist{
+	width: 100%;
+	background-color: #fff;
+	color: #3a6ca1;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.listimg img{
+	height: 50%;
+	width: 100%;
+}
+.blogmainbody .listhead{
+	height: 70px;
+	overflow: hidden;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: justify;
+	padding: 5px 20px;
+}
+.blogmainbody .listend{
+	padding: 5px 20px;
+	overflow: hidden;
+	font-size: 18px;
+}
+.blogmainbody .listtime{
+	float: left;
+}
+							
+.blogmainbody .listnoofcomm{
+	float: right;
+}
+
+/*==========comment==================================================*/
+.blogcomment{
+	margin: 15px 25px;
+}
+.blogcomment a{
+	color: #3a6ca1;
+}
+.commentbox{
+	overflow: hidden;
+	margin: 15px 0;
+	border: 1px solid #3a6ca1;
+	border-radius: 5px;
+	box-shadow: 0 0 2px;
+}
+.innercommentbox{
+	overflow: hidden;
+	margin: 5px 35px;
+}
+
+.bordertop{
+	border-top: 1px solid #3a6ca1;
+}
+.commentbox .commenttop{
+	overflow: hidden;
+	margin: 0 25px;
+}
+.commentbox .borderall{
+	border:1px solid #3a6ca1;
+	border-radius: 5px;
+	margin: 14px 0;
+	box-shadow: 0 0 1px;
+	
+}
+.commentbox .commentuname{
+	float: left;
+	margin: 5px;
+	font-size: 20px;
+	font-weight: 700;	
+}
+.commentbox .commenttime{
+	float: right;	
+}
+.commentbox .showcomment{
+	padding: 0 10px;
+	margin: 5px 25px;
+	text-align: justify;
+}
+.commentbox .commentbottom{
+	overflow: hidden;
+	margin: 0 25px;
+	padding-bottom: 5px;
+}
+
+.commentbox .commentno{
+	float: left;
+}
+.commentbox .commentrpl{
+	float: right;
+	
+}
+.commenthead{
+	font-size: 20px;
+	font-weight: 700;
+	border-bottom: 1px solid#3a6ca1;
+
+}
+.commentbody,.innercommentbody{
+	margin: 15px 0;
+}
+.commentbody textarea,.innercommentbody textarea{
+	width: 100%;
+	height: 150px;
+	background: transparent;
+}
+.commentbody textarea::placeholder,.innercommentbody textarea::placeholder{
+	text-align: center;
+}
+@media screen and (max-width: 991px){
+	.blogrightside{
+		display: none;
+	}
+	.blogconbody{
+		width: 100%;
+	}
+}
+/*@media screen and (max-width: 575px){
+	.blogconbody{
+		width: unset;
+		top: 0%;
+		right: 0%;
+		left: 0%;
+	}
+}*/

@@ -1,0 +1,59 @@
+{% extends 'needs/ieltshomecoaching.html' %}
+{% block title %}
+PROJECT | Class
+{% endblock %}
+{% block content %}
+
+<div class="pagehead centr">
+    Create Faculty
+</div>
+<!-- checkbox -->
+<div class="form-check row m-t-30">
+    <div class="col-lg-9 ml-auto">
+        {% if error %}
+        {{ error|safe }}
+        {% endif %}
+    </div>
+</div>
+<form method="Post">
+
+    {% csrf_token %}
+    <!-- Name input-->
+    <div class="addmanyform overhid">
+        <div class="formlabel col-12 col-md-6 col-sm-12">
+            First name
+        </div>
+        <div class="first col-12 col-md-6 col-sm-12">
+            <input type="text" name="first_name" required>
+        </div>
+        <div class="formlabel col-12 col-md-6 col-sm-12">
+            Last name
+        </div>
+        <div class="first col-12 col-md-6 col-sm-12">
+            <input type="text" name="last_name" required>
+        </div>
+        <div class="formlabel col-12 col-md-6 col-sm-12">
+            Faculty Id
+        </div>
+        <div class="first col-12 col-md-6 col-sm-12">
+            <input type="number" name="facultyid" required>
+        </div>
+        <div class="formlabel col-12 col-md-6 col-sm-12">
+            E-mail
+        </div>
+        <div class="first col-12 col-md-6 col-sm-12">
+            <input type="email" name="email" required>
+        </div>
+        <div class="formlabel col-12 col-md-6 col-sm-12">
+            Mobile Number
+        </div>
+        <div class="first col-12 col-md-6 col-sm-12">
+            <input type="number" name="mobilenumber" pattern="[0-9]{10}" required>
+        </div>
+    </div>
+    <div class="centr">
+        <button class="btn1 btn1hover">Add</button>
+    </div>
+</form>
+
+{% endblock %}

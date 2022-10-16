@@ -1,0 +1,1210 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    font-size: 12px;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mytest {
+    position: relative;
+}
+
+.mainsection {
+    width: 40%;
+    display: block;
+    /* overflow: hidden; */
+    margin: 0 auto;
+    height: 100%;
+}
+
+.test-header {
+    float: left;
+}
+
+.top-nav {
+    background-color: #2d70b6;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.top-nav a {
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* -------------------------------- */
+.selectopt {
+    width: 65%;
+    /* height: 70%; */
+    text-align: center;
+    margin: 70px auto;
+    /* display: block;
+    overflow: scroll; */
+}
+
+.seleopthead {
+    padding: 20px;
+    background: #40bfc1;
+    font-size: 25px;
+    color: #fff;
+}
+
+.butend {
+    padding: 50px;
+}
+
+.selectopt table {
+    width: 100%;
+    padding: 20px;
+    height: 50%;
+    display: block;
+    overflow: scroll;
+}
+
+.selectopt table tr td {
+    text-align: center;
+    padding: 0 15px;
+    font-size: 25px;
+}
+
+.selectopt table::-webkit-scrollbar {
+    display: none;
+}
+
+.selectopt table {
+    overflow: -moz-scrollbars-none;
+}
+
+.selectopt table {
+    -ms-overflow-style: none;
+}
+
+/* ---------------------------- */
+.index_top .header {
+    background-color: #2d70b6;
+    height: 50px;
+}
+
+.index_top .start {
+    background: #666;
+    height: 130px;
+    border-bottom: 1px solid #444;
+}
+
+.index_top .name {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 20px;
+    padding-top: 5px;
+    text-align: left;
+}
+
+.index_top .no {
+    color: #fff200;
+    font-size: 44px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.index_top .end {
+    margin-left: 20px;
+}
+
+.index_top .user {
+    background: #fafbfc none repeat scroll 0 0;
+    border-bottom: 1px solid #444;
+    float: right;
+    height: 100%;
+    vertical-align: middle;
+    width: 12%;
+}
+
+.index_top img {
+    border: 1px solid #000;
+    margin-top: 20px;
+    height: 88px;
+    width: 100px;
+}
+
+.index_top .info {
+    float: right;
+    padding-right: 10px;
+}
+
+.index_top .candidate, .sub {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.index_top .cname {
+    color: #fff200;
+    font-size: 34px;
+    margin-left: 5px;
+    text-align: right;
+}
+
+.index_top .exam {
+    color: #fff200;
+    font-size: 15px;
+    margin-left: 5px;
+    text-align: right;
+}
+
+#login {
+    margin: 50 auto;
+    width: 370px;
+    font-size: 12px;
+}
+
+.index_login .login_header {
+    background: none repeat scroll 0 0 #DDD;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px 5px 0 0;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 22px;
+    width: 326px;
+}
+
+#login form {
+    background: #f5f5f5;
+    border: 1px solid #dbdbdb;
+    border-radius: 0 0 5px 5px;
+    margin: auto;
+    padding: 25px;
+    width: 320px;
+    border-top: none;
+}
+
+.index_login form {
+    display: block;
+}
+
+#login form .fontawesome-user {
+    background: url(../images/user.png) no-repeat center center #eee;
+    border: 1px solid #cacaca;
+    border-radius: 3px 0px 0px 3px;
+    border-right: 0px solid #434a52;
+    color: #606468;
+    display: block;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    width: 49px;
+    height: 35px;
+    *margin-top: 7px !important;
+    margin-top: 6px\9;
+}
+
+#login form input[type="text"], #login form input[type="password"] {
+    color: #a9a9a9;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 220px;
+    height: 37px;
+    border: 1px solid #cacaca;
+    *margin-top: 5px;
+    margin-top: 6px\9;
+}
+
+.index_login input {
+    border: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-text-fill-color: #a9a9a9;
+}
+
+#login form .fontawesome-lock {
+    background: url(../images/Lock-26.png) no-repeat center center #eee;
+    border: 1px solid #cacaca;
+    border-radius: 3px 0px 0px 3px;
+    border-right: 0px solid #434a52;
+    color: #606468;
+    display: block;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    width: 49px;
+    height: 35px;
+    *margin-top: 7px !important;
+    margin-top: 6px\9;
+}
+
+#login form #signIn {
+    background: #38aae9;
+    border: 0;
+    width: 280px;
+    height: 40px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 40px;
+}
+
+.index_login .btn1 {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    height: 39px;
+    line-height: 39px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+/* ----------------------instruction--&--otherinstruction-------------------------- */
+.instruction .header {
+    background: #3b5998 none repeat scroll 0 0;
+    border-bottom: 1px solid #7691a2;
+    height: 6%;
+}
+
+.instruction #right {
+    float: right;
+    height: 100%;
+    width: 18%;
+}
+
+.instruction #left {
+    width: 82%;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.instruction .head1 {
+    height: 8%;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #676568;
+    padding-left: 15px;
+    background: #BCE8F5;
+}
+
+.instruction .ins {
+    height: 73%;
+    display: block;
+    overflow: auto;
+    padding: 0 80 0 120;
+    border-bottom: 1px solid gray;
+    font-size: 15px;
+}
+
+.instruction .insimg {
+    height: 18%;
+    width: 45%;
+    border: 1px solid #c3c3c1;
+    margin: 25px auto;
+}
+
+.instruction .name {
+    font-size: 20px;
+    color: rgb(79, 104, 135);
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.instruction .prebtn {
+    line-height: 38px;
+    float: left;
+    margin-left: 20px;
+}
+
+.instruction .nextbtn {
+    line-height: 38px;
+    margin-left: 20px;
+    float: right;
+    margin: 19 20 0 0;
+    font-size: 20px;
+}
+
+.instruction .iamready {
+    float: right;
+    line-height: 38px;
+}
+
+.instruction .btn1 {
+    border: 1px solid #c8c8c8;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    height: 39px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    -webkit-appearance: none;
+}
+
+a.btn1:hover {
+    border: 1px solid #333;
+}
+
+.btn-primary1:hover {
+    background-color: #0c7cd5;
+    border-color: #0a68b4;
+    color: #ffffff;
+    opacity: 1;
+}
+
+.nextimg {
+    mix-blend-mode: hue;
+}
+
+/* -------------------- */
+.instruction .otherins {
+    height: 60%;
+    display: block;
+    overflow: auto;
+    padding: 0 80 0 120;
+    border-bottom: 1px solid gray;
+    font-size: 15px;
+}
+
+.instruction #privious {
+    float: left;
+}
+
+.final {
+    margin: 10px;
+}
+
+.final .check {
+    float: left;
+}
+
+.final input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}
+
+.final label {
+    display: block;
+    cursor: pointer;
+    line-height: 20px;
+    color: #303030;
+    margin-bottom: 20px;
+    float: left;
+    width: 96%;
+    font-size: 12px;
+}
+
+.lastsection {
+    width: 65%;
+}
+
+.instruction input[type=checkbox] {
+    vertical-align: middle;
+}
+
+.check .input {
+    /* -webkit-writing-mode: horizontal-tb !important; */
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(white, black);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+/* ----------------test------------- */
+.header1 {
+    background: #363636;
+    color: #f7f64e;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 28px;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mainTest .instruction1 {
+    background: url(../images/Icon-sprite.png) no-repeat -140px -7px;
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+    margin-top: 6px;
+    float: left;
+}
+
+.mainTest .paper {
+    background: url(../images/Icon-sprite.png) no-repeat -188px -8px;
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+    margin-top: 6px;
+    float: left;
+}
+
+.mainTest .questionpaper, .mainTest .instruction {
+    margin-right: 12px;
+    float: right;
+}
+
+.setquestionpaper, .setinstruction {
+    display: none;
+    background: #fff;
+    padding: 0px 10px;
+    line-height: 28px;
+}
+
+.iq {
+    cursor: pointer;
+}
+
+.img {
+    float: left;
+    width: 35%;
+    border: 1px solid #c3c3c1;
+    margin: 5px;
+}
+
+.username {
+    color: #2c363f;
+    float: left;
+    font-size: 1.417em;
+    font-weight: bold;
+    width: 50%;
+    padding: 4px;
+}
+
+.right_side {
+    width: 20%;
+    float: right;
+}
+
+.left_side {
+    width: 79.8%;
+    border-bottom: 1px solid #c3c3c1;
+    border-right: 1px solid #c3c3c1;
+    float: left;
+}
+
+.mainTest .first {
+    background: #eeeeee;
+    padding: 5 0;
+}
+
+.calc {
+    font-size: 25px;
+    margin-top: 10px;
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.mainTest .VARC, .mainTest .DILR, .mainTest .QA {
+    background: #ffffff;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    color: #585c65;
+    height: 30px;
+    margin: 8 6;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 5px;
+}
+
+.mainTest .instruction_icon {
+    background: url(../images/Icon-sprite.png) no-repeat -140px -7px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.mainTest .second {
+    border-bottom: 1px solid #c3c3c1;
+    padding: 5px 0 5px 9px;
+    font-weight: 700;
+}
+
+.mainTest .time {
+    float: right;
+    margin-right: 10px;
+}
+
+.mainTest .verbal {
+    background: #4e85c5;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 5px 50px;
+    float: left;
+    margin-left: 7px;
+}
+
+.marks {
+    float: right;
+    color: #333;
+    padding-right: 10px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.third {
+    border-bottom: 1px solid #c3c3c1;
+    display: block;
+    overflow: hidden;
+}
+
+.sidemenubut {
+    float: right;
+    display: none;
+    font-size: 30px;
+    padding: 0 15px;
+}
+
+.dis {
+    width: 100%;
+    height: 62%;
+    float: left;
+}
+
+#left_div {
+    width: 50%;
+    border-left: none;
+    margin-top: 2px;
+    height: 100%;
+    font-size: 15px;
+    overflow: auto;
+    text-align: left;
+    border: 1px solid #bdbdbd;
+    float: left;
+    padding: 10px;
+}
+
+#right_div {
+    width: 49.9%;
+    margin-top: 2px;
+    height: 100%;
+    font-size: 15px;
+    overflow: auto;
+    text-align: left;
+    border: 1px solid #bdbdbd;
+    border-right: none;
+    float: left;
+}
+
+/*.dis img{
+    height: 400px;
+    width: 500px;
+}*/
+#que_div {
+    width: 100%;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid #000;
+    float: left;
+}
+
+.closebut {
+    display: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.closebut i {
+    float: right;
+}
+
+.up_side {
+    background: #fff;
+}
+
+.up_side .notesforque {
+    float: left;
+    margin-top: 6px;
+    width: 48%;
+    font-size: 85%;
+}
+
+.buttbox_area {
+    padding: 5 8;
+    display: block;
+    overflow: hidden;
+}
+
+.note2 {
+    display: none;
+}
+
+.buttbox_area span.answered1 {
+    background-position: -7px -55px;
+    float: left;
+    height: 26px;
+    line-height: 20px;
+    margin-right: 10px;
+    width: 29px;
+    color: #fff;
+}
+
+.buttbox_area span.not_answered1 {
+    background-position: -42px -56px;
+    float: left;
+    height: 26px;
+    line-height: 22px;
+    margin-right: 10px;
+    width: 29px;
+    color: #fff;
+}
+
+.buttbox_area span.not_visited1 {
+    background-position: -107px -56px;
+    float: left;
+    height: 26px;
+    line-height: 21px;
+    margin-right: 10px;
+    width: 29px;
+    color: #000;
+    padding-top: 2px;
+}
+
+.buttbox_area span.review1 {
+    background-position: -75px -54px;
+    float: left;
+    height: 28px;
+    line-height: 18px;
+    margin-right: 10px;
+    width: 28px;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.buttbox_area span.review_answered1 {
+    background-position: -9px -87px;
+    float: left;
+    height: 29px;
+    line-height: 15px;
+    margin: 0 10px 10px 0;
+    width: 28px;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.buttbox_area span {
+    background: url(../images/questions-sprite.png) no-repeat;
+    color: #262626;
+    line-height: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.buttbox_area span.typesoftitle {
+    background: none;
+    text-align: left;
+}
+
+.review_answer {
+    width: auto;
+    float: left;
+    margin-top: 6px;
+    font-size: 85%;
+}
+
+.extraSize-hide {
+    max-width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#que_div .sectiforhead {
+    background: #4e85c5 none repeat scroll 0 0;
+    color: #fff;
+    line-height: 28px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#que_div .sectioforsubhead {
+    /*    background: #e5f6fd;*/
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.down_side {
+    background: #e5f6fd;
+    padding: 10 10 12 20;
+    height: 61.8%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.button_area {
+    height: 60px;
+    overflow: hidden;
+    float: left;
+}
+
+.ques_area span.not_answered {
+    background-position: -57px -127px;
+    width: 49px;
+    height: 43px;
+}
+
+.ques_area span.not_visited {
+    background-position: -157px -4px;
+    color: #474747;
+    height: 43px;
+    line-height: 43px;
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.ques_area span {
+    background: url(../images/questions-sprite.png) no-repeat;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    font-size: 1.417em;
+    font-weight: normal;
+    line-height: 42px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+.mainTest .que {
+    text-align: left;
+    height: 25px;
+    border-bottom: 1px solid #dbdbdb;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.mainTest .questions {
+    width: 95%;
+    margin-left: 5px;
+    font-family: Arial, verdana, helvetica, sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.mainTest .ans label {
+    display: block;
+    cursor: pointer;
+    line-height: 24px;
+    padding: 2px 10px;
+    color: #303030;
+    margin-bottom: 20px;
+    float: left;
+    clear: both;
+}
+
+.mainTest .radtxt {
+    width: 95%;
+    vertical-align: middle;
+}
+
+.mainTest input[type=radio], input[type=checkbox] {
+    vertical-align: middle;
+}
+
+.mainTest .leftend {
+    width: 80%;
+    padding-left: 20px;
+    margin-top: 6px;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: left;
+    float: left;
+    border: 1px solid #bdbdbd;
+}
+
+.mainTest .rightend {
+    background: #f8fbff;
+    width: 20%;
+    margin-top: 6px;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #bdbdbd;
+    float: left;
+}
+
+.moddis {
+    font-size: 25px;
+}
+
+.modque {
+    font-size: 20px;
+}
+
+.modbox {
+    display: block;
+    max-height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.modcon {
+    padding: 2px;
+    color: #fff;
+}
+
+.modal .modal-header button {
+    font-size: 30px;
+    color: #fff;
+}
+
+.modopt {
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+    padding: 7px 0;
+}
+
+.btn1 {
+    border: 1px solid #c8c8c8;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13.3333px;
+    font-weight: 400;
+    height: 39px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.normal1 {
+    color: #252525;
+    background-color: #fff;
+}
+
+.save {
+    color: #fff;
+    background-color: #0c7cd5;
+    float: right;
+    margin-right: 15px;
+    line-height: 33px;
+}
+
+.btn-blue1 {
+    color: #fff;
+    background-color: #38aae9;
+}
+
+.btn1:hover {
+    background-color: #0c7cd5;
+    border-color: #333;
+    color: #ffffff;
+}
+
+.modal-body h2 {
+    font-size: 2em;
+    margin-bottom: 0.75em;
+    line-height: 30px;
+}
+
+.modal-header {
+    background-color: #4285f4;
+    color: white;
+}
+
+/* -------------result------------- */
+.tablecontain {
+    height: 75%;
+}
+
+.tableof {
+    overflow: auto;
+    text-align: center;
+    padding: 0 20px 15px 20px;
+    height: 360px;
+    font-size: 12px;
+    font-family: arial;
+}
+
+.summary {
+    background: none;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #676568;
+    background: #BCE8F5;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.score {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.score thead {
+    background-color: #cee3f8;
+}
+
+.score th {
+    color: #4c6989;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    font-size: 12px;
+    font-family: arial;
+}
+
+.score td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    font-size: 12px;
+    font-family: arial;
+}
+
+.confirmsection {
+    height: 20px;
+    text-align: center;
+    padding: 10px
+}
+
+.confirmbutton {
+    height: 20px;
+    text-align: center;
+    padding: 10px
+}
+
+.parahid {
+    display: none;
+}
+
+.fiveHide {
+    display: none;
+}
+
+.keyinput input {
+    width: 122px;
+}
+
+.keyinput {
+    width: 122px;
+    margin: 5px auto;
+}
+
+.key {
+    padding: 5px 8px;
+    border: 1px solid black;
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.keybody {
+    margin: auto;
+    padding: 5px;
+    border: 1px solid black;
+    width: 122px;
+    height: 280px;
+}
+
+.p-14 {
+    padding: 3px 14px;
+}
+
+.p-20 {
+    padding: 3px 20px;
+}
+
+.p-9 {
+    padding: 5px 9px;
+}
+
+.p-10 {
+    padding: 5px 10px;
+}
+
+.centr {
+    text-align: center;
+}
+
+.subhead {
+    font-size: 40px;
+    margin: 50px;
+}
+
+.subbutton .btn1 {
+    margin: 10px 30px;
+    font-size: 25px;
+}
+
+/*.quee{
+    display: none;
+}
+*/
+@media screen and (max-width: 1200px) {
+    .note1 {
+        display: none;
+    }
+
+    .note2 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    body {
+        overflow: auto;
+    }
+
+    .left_side {
+        width: 100%;
+    }
+
+    .right_side {
+        width: 0px;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        bottom: 0;
+    }
+
+    .sidemenubut {
+        display: block;
+    }
+
+    .closebut {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #left_div, #right_div {
+        width: 100%;
+    }
+
+    .dis {
+        height: auto;
+    }
+
+    .setquestionpaper, .setinstruction {
+        display: block;
+    }
+
+    .mainTest .questionpaper, .mainTest .instruction {
+        display: none
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow: auto;
+    }
+
+    .mainTest .leftend {
+        padding-left: 10px;
+        width: 97%;
+        margin: 10px;
+        border: none;
+        display: inline-block;
+    }
+
+    .leftend .btn1 {
+        width: 48%;
+    }
+
+    .leftend .save, .rightend .submit {
+        width: 96%;
+    }
+
+    .mainTest .rightend {
+        width: 97%;
+        margin: 10px;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .leftend .btn1 {
+        width: 139px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .leftend .save, .rightend .submit {
+        width: 96%;
+    }
+}

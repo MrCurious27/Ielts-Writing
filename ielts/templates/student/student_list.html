@@ -1,0 +1,375 @@
+{% extends 'needs/ieltshomefaculty.html' %}
+{% block title %}
+PROJECT | Student
+{% endblock %}
+{% block content %}
+
+<form action="{% url 'ielts:faculty_home' request.user.faculty.coaching_class_key.user_key %}" method="get">
+    <div class="topofpage">
+        <div class="grid-container">
+            <div class="pagehead">
+                Student Detail
+            </div>
+            <div class="sbox">
+                <div id="focus-search" class="searcharea">
+                    <input id="searchid" name="q" type="text" placeholder="Search">
+                    <div id="seachicon" class="searchicon">
+                        <input type="submit" name="" id="sicon" value="sbmit">
+                        <label for="sicon"></label>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'ielts:create_student' request.user.faculty.coaching_class_key.user_key  %}">
+                <div class="addmany">
+                    <i class="fas fa-plus"></i> Add Student
+                </div>
+            </a>
+        </div>
+    </div>
+</form>
+
+<div class="errorshow">
+    {% if q %}
+    Showing result for "{{ q }}"
+    {% endif %}
+</div>
+
+<div class="tlarge">
+    <div class="table_area col-12 col-md-12 col-sm-12 col-lg-12">
+        <table class="table_body table-hover">
+            <thead>
+                <tr>
+                    <th>Student id</th>
+                    <th>Student Username</th>
+                    <th>Student Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Edit</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in object_list %}
+                <tr>
+                    <td>{{ student.student_uid }}</td>
+                    <td class="pointeronly" data-toggle="modal" data-target="#profilestudent{{ forloop.counter }}">{{ student.user_key.username }}</td>
+                    <td class="pointeronly" data-toggle="modal" data-target="#profilestudent{{ forloop.counter }}">{{ student.user_key.get_full_name }}</td>
+                    <td>{{ student.user_key.email }}</td>
+                    <td>{{ student.mobile_number }}</td>
+                    <td data-toggle="modal" data-target="#edituser{{ forloop.counter }}"><i class="far fa-edit pointeronly" title="edit"></i></td>
+                    <td>
+                        {% if student.is_active %}
+                        <i class="fas fa-check pointeronly" title="active"></i>
+                        <form action="{% url 'ielts:block_student' request.user %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="studentid" value="{{ student.id }}">
+                            <input type="submit" name="submit" value="Block">
+                        </form>
+                        {% else %}
+                        <i class="fas fa-times pointeronly" title="deactive"></i>
+                        <form action="{% url 'ielts:unblock_student' request.user %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="studentid" value="{{ student.id }}">
+                            <input type="submit" name="submit" value="Unblock">
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7">No Data</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+
+    {% for student in object_list %}
+    <div class="smtable_area col-12 col-md-12 col-sm-12 col-lg-12">
+        <table class="table_body table-hover">
+            <tbody>
+                <tr>
+                    <td>Student Id</td>
+                    <td>{{ student.student_uid }}</td>
+                </tr>
+                <tr>
+                    <td>Student Username</td>
+                    <td class="pointeronly" data-toggle="modal" data-target="#profilestudent{{ forloop.counter }}">{{ student.user_key.username }}</td>
+                </tr>
+                <tr>
+                    <td>Student Name</td>
+                    <td class="pointeronly" data-toggle="modal" data-target="#profilestudent{{ forloop.counter }}">{{ student.user_key.get_full_name }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td class="emailresize">{{ student.user_key.email }}</td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td>{{ student.mobile_number }}</td>
+                </tr>
+                <tr>
+                    <td>Faculty</td>
+                    <td>{{ student.faculty_key.user_key.get_full_name }}</td>
+                </tr>
+                <tr>
+                    <td data-toggle="modal" data-target="#edituser{{ forloop.counter }}"><i class="far fa-edit pointeronly" title="edit"></i></td>
+                    <td>
+                        {% if student.is_active %}
+                        <i class="fas fa-check pointeronly" title="active"></i>
+                        <form action="{% url 'ielts:block_student' request.user %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="studentid" value="{{ student.id }}">
+                            <input type="submit" name="submit" value="Block">
+                        </form>
+                        {% else %}
+                        <i class="fas fa-times pointeronly" title="deactive"></i>
+                        <form action="{% url 'ielts:unblock_student' request.user %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="studentid" value="{{ student.id }}">
+                            <input type="submit" name="submit" value="Unblock">
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+<div class="pagesno">
+    {% if page_obj.has_previous %}
+    <div class="first">
+        <a href="?page=1"> First</a>
+    </div>
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+    {% endif %}
+    <span class="current">
+        &nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;
+    </span>
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+    <div class="last">
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    </div>
+    {% endif %}
+</div>
+
+{% for student in object_list %}
+<div class="modal fade" id="profilestudent{{ forloop.counter }}" data-backdrop="" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">{{ student.user_key.get_full_name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table_area col-12 col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <table class="table_body">
+                        <tbody>
+                            <tr>
+                                <td>Mentor Faculty:</td>
+                                <td>{{ student.faculty_key.user_key.get_full_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Task 1 (G) given:</td>
+                                <td>{{ student.answertaskonegeneral_set.all.count }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Task 1 (A) given:</td>
+                                <td>{{ student.answertaskoneacademic_set.all.count }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Task 2 given: </td>
+                                <td>{{ student.answertasktwo_set.all.count }}</td>
+
+                            </tr>
+                            <tr>
+                                <td>Block Status</td>
+                                <td>
+                                    {% if student.is_active %}
+                                    <i class="fas fa-check pointeronly" title="active"></i>
+                                    <div>
+                                        active
+                                    </div>
+                                    {% else %}
+                                    <i class="fas fa-times pointeronly" title="deactive"></i>
+                                    <div>
+                                        inactive
+                                    </div>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <canvas id="myChartT1A{{ forloop.counter }}" width="400" height="300"></canvas><br><br>
+                    <canvas id="myChartT1G{{ forloop.counter }}" width="400" height="300"></canvas><br><br>
+                    <canvas id="myChartT2{{ forloop.counter }}" width="400" height="300"></canvas>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="edituser{{ forloop.counter }}" data-backdrop="" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ student.user_key.get_full_name }}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'ielts:student_update' request.user.faculty.coaching_class_key.user_key %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="studentid" value="{{ student.id }}">
+                    <div class="addmanyform overhid">
+                        <div class="formlabel col-12 col-md-6 col-sm-12">
+                            First name
+                        </div>
+                        <div class="first col-12 col-md-6 col-sm-12">
+                            <input name="first_name" type="text" value="{{ student.user_key.first_name }}" required>
+                        </div>
+                        <div class="formlabel col-12 col-md-6 col-sm-12">
+                            Last name
+                        </div>
+                        <div class="first col-12 col-md-6 col-sm-12">
+                            <input name="last_name" type="text" value="{{ student.user_key.last_name }}" required>
+                        </div>
+                        <div class="formlabel col-12 col-md-6 col-sm-12">
+                            Student Id
+                        </div>
+                        <div class="first col-12 col-md-6 col-sm-12">
+                            <input type="number" name="studentuid" value="{{ student.student_uid }}" required>
+                        </div>
+                        <div class="formlabel col-12 col-md-6 col-sm-12">
+                            Mobile Number
+                        </div>
+                        <div class="first col-12 col-md-6 col-sm-12">
+                            <input type="number" name="mobilenumber" pattern="[0-9]{10}" value="{{ student.mobile_number }}" required>
+                        </div>
+                        <div class="formlabel col-12 col-md-6 col-sm-12">
+                            E-mail
+                        </div>
+                        <div class="first col-12 col-md-6 col-sm-12">
+                            <input name="email" type="mail" value="{{ student.user_key.email }}" required>
+                        </div>
+                    </div>
+                    <div class="centr">
+                        <button type="submit" class="btn1 btn1hover">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for student in object_list %}
+<script>
+var ctxT1A = document.getElementById('myChartT1A{{ forloop.counter }}').getContext('2d');
+var ctxT1G = document.getElementById('myChartT1G{{ forloop.counter }}').getContext('2d');
+var ctxT2 = document.getElementById('myChartT2{{ forloop.counter }}').getContext('2d');
+
+labelsT1A = [{% for datas in student.answertaskoneacademic_set.all %} "{{ datas.timestamp|date:"j/n/y (G:i)" }}", {% endfor %}]
+dataT1A = [{% for datas in student.answertaskoneacademic_set.all %} "{{ datas.overall_band }}", {% endfor %}]
+
+labelsT1G = [{% for datas in student.answertaskonegeneral_set.all %} "{{ datas.timestamp|date:"j/n/y (G:i)" }}", {% endfor %}]
+dataT1G = [{% for datas in student.answertaskonegeneral_set.all %} "{{ datas.overall_band }}", {% endfor %}]
+
+labelsT2 = [{% for datas in student.answertasktwo_set.all %} "{{ datas.timestamp|date:"j/n/y (G:i)" }}", {% endfor %}]
+dataT2 = [{% for datas in student.answertasktwo_set.all %} "{{ datas.overall_band }}", {% endfor %}]
+
+var myChartT1A = new Chart(ctxT1A, {
+    type: 'line',
+    data: {
+        labels: labelsT1A,
+        datasets: [{
+            label: 'Task One Academic Band Line Graph',
+            data: dataT1A,
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(75, 192, 192, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 9,
+                }
+            }]
+        }
+    }
+});
+
+var myChartT1G = new Chart(ctxT1G, {
+    type: 'line',
+    data: {
+        labels: labelsT1G,
+        datasets: [{
+            label: 'Task One General Band Line Graph',
+            data: dataT1G,
+            backgroundColor: [
+                'rgba(153, 102, 255, 0.2)',
+            ],
+            borderColor: [
+                'rgba(153, 102, 255, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 9,
+                }
+            }]
+        }
+    }
+});
+
+var myChartT2 = new Chart(ctxT2, {
+    type: 'line',
+    data: {
+        labels: labelsT2,
+        datasets: [{
+            label: 'Task Two Band Line Graph',
+            data: dataT2,
+            backgroundColor: [
+                'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 9,
+                }
+            }],
+        }
+    }
+});
+</script>
+{% endfor %}
+
+{% endblock %}

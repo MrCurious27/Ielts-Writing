@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/IELTS/stylesheetielts.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/stylesheet_mini.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <title>Login</title>
+    <style media="screen">
+        body {
+            height: 100%;
+            width: 100%;
+            background-image: url("{% static 'tryimg/4.png' %}");
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="centr">
+        <div class="containerarea">
+            <div class="login-area">
+                <form action="{% url 'ielts:login' %}" method="Post" autocomplete="off">
+                    <div style="color:red;">
+                        {% csrf_token %}
+                        {% if error %}
+                        {{ error|safe }}
+                        {% endif %}
+                        {% if message %}
+                        {{ message|safe }}
+                        {% endif %}
+                    </div>
+                    <div class="inputarea one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="sectionarea">
+                            <h5>Username</h5>
+                            <input type="text" name="username" class="input">
+                        </div>
+                    </div>
+                    <div class="inputarea pass">
+                        <div class="i">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="sectionarea">
+                            <h5>Password</h5>
+                            <input type="password" name="password" class="input">
+                        </div>
+                    </div>
+                    <input type="submit" class="loginbtn" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const inputs = document.querySelectorAll(".input");
+
+        function addfocus() {
+            let parent = this.parentNode.parentNode;
+            parent.classList.add("focus");
+        }
+
+        function removefocus() {
+            let parent = this.parentNode.parentNode;
+            if (this.value == "") {
+                parent.classList.remove("focus");
+            }
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener("focus", addfocus);
+            input.addEventListener("blur", removefocus);
+        });
+    </script>
+</body>
+
+</html>

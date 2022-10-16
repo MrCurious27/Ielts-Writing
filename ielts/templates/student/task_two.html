@@ -1,0 +1,121 @@
+{% extends 'needs/ieltshomestudent.html' %}
+{% block title %}
+PROJECT | Student
+{% endblock %}
+{% block content %}
+
+<div class="topofpage sbar">
+    {% if not can_test %}
+    <div id="alertbox" class="alertbox">
+        Dont have enough credit, contact your faculty
+        <button class="last" onclick="closealert()" type="button"><i class="fas fa-times"></i></button>
+    </div>
+    {% endif %}
+    <div class="grid-container">
+        <div class="pagehead">
+            Task Two
+        </div>
+        <div class="sbox">
+            <form action="{% url 'ielts:task_two' request.user.student.faculty_key.coaching_class_key.user_key.username %}" method="get">
+                <div id="focus-search" class="searcharea">
+                    <input id="searchid" name="q" type="text" placeholder="Search">
+                    <div id="seachicon" class="searchicon">
+                        <input type="submit" name="" id="sicon" value="sbmit">
+                        <label for="sicon"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="errorshow">
+    {% if q %}
+    Showing result for "{{ q }}"
+    {% endif %}
+</div>
+<div class="tlarge">
+    <div class="table_area col-12 col-md-12 col-sm-12 col-lg-12">
+        <table class="table_body table-hover">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Question</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for question in object_list %}
+                <tr>
+                    <td>{{ question.uid }}</td>
+                    <td>{{ question }}</td>
+                    <td>
+                        <form action="{% url 'ielts:start_task_two' request.user.student.faculty_key.coaching_class_key.user_key.username %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="questionid" value="{{ question.id }}">
+                            <input type="submit" class="btn1 btn1hover" name="start" value="start">
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">No Data</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% for question in object_list %}
+<div class="smtable_area profilearea col-12 col-md-12 col-sm-12 col-lg-12">
+    <table class="table_body table-hover">
+        <tbody>
+            <tr>
+                <td>{{ question.uid }}</td>
+            </tr>
+            <tr>
+                <td>{{ question }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <form action="{% url 'ielts:start_task_two' request.user.student.faculty_key.coaching_class_key.user_key.username %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="questionid" value="{{ question.id }}">
+                        <input type="submit" class="btn1 btn1hover" name="start" value="start">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% empty %}
+<div class="smallsize centr">
+    No data
+</div>
+{% endfor %}
+
+<div class="pagesno">
+    {% if page_obj.has_previous %}
+    <div class="first">
+        <a href="?page=1"> First</a>
+    </div>
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+    {% endif %}
+    <span class="current">
+        &nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;
+    </span>
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+    <div class="last">
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    </div>
+    {% endif %}
+</div>
+
+<script type="text/javascript">
+    function closealert() {
+        document.getElementById("alertbox").style.display = "None";
+    }
+</script>
+
+{% endblock %}
